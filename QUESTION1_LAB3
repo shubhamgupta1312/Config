@@ -1,0 +1,52 @@
+#include "Config.h"
+
+#define LED _LATA0
+#define LED_TRIS _TRISA0
+
+
+void MSDelay(unsigned int);
+unsigned int Ctr =0;
+
+// *******************************
+
+int main (void)
+{
+LATA = 0;
+TRISAbits.TRISA0 = 0;// configure PORTA for output
+TRISAbits.TRISA1 = 0; 
+TRISAbits.TRISA2 = 0; 
+TRISAbits.TRISA3 = 0; 
+TRISAbits.TRISA4 = 0; 
+TRISAbits.TRISA5 = 0; 
+TRISAbits.TRISA6 = 0; 
+TRISAbits.TRISA7 = 0; 
+
+
+while (1)
+{
+ PORTA=0X000F;
+//   // PORTAbits.RA0 = 1;
+////   PORTAbits.RA1 = 1;
+// // PORTAbits.RA2 = 1;
+////   PORTAbits.RA3 = 1;
+////    PORTAbits.RA4 = 1;
+////    PORTAbits.RA5 = 1;
+//  PORTAbits.RA6 = 1;
+//    PORTAbits.RA7 = 1;
+ Delay(1500);
+ 
+ PORTA=0X00F0;
+ 
+ Delay(1500);
+ 
+//    
+}
+}
+
+
+void MSDelay(unsigned int itime)
+  {
+    unsigned int i; unsigned char j;
+    for(i=0;i<itime;i++)
+      for(j=0;j<255;j++); // Maximum value for 8 bits
+}
